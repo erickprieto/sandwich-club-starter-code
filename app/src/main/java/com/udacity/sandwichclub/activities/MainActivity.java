@@ -1,4 +1,4 @@
-package com.udacity.sandwichclub;
+package com.udacity.sandwichclub.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,21 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.udacity.sandwichclub.R;
+import com.udacity.sandwichclub.model.Sandwich;
+
+/**
+ * First Activity on show to User at launch time.
+ * List of {@link Sandwich}, showing only names.
+ * @author Erick Prieto
+ * @since 2018
+ */
 public class MainActivity extends AppCompatActivity {
+
+    /**
+     * Name of reference to log all records of events in this class.
+     */
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,11 +30,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         String[] sandwiches = getResources().getStringArray(R.array.sandwich_names);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, sandwiches);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this
+                , android.R.layout.simple_list_item_1
+                , sandwiches);
 
         // Simplification: Using a ListView instead of a RecyclerView
-        ListView listView = findViewById(R.id.sandwiches_listview);
+        ListView listView = (ListView) findViewById(R.id.MainActivity_sandwichesListView);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

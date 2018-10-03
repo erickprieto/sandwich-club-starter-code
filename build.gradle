@@ -9,7 +9,11 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        //Latest NDK removed support for mips abi, and earler version of android gradle plugin still
+        //check for the existence of mips toolchain. see here for more info.
+        //Solution: Upgrade android gradle plugin to 3.1 or newer.
+        //classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath "com.android.tools.build:gradle:3.2.0"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.udacity.sandwichclub.MainActivity">
+    tools:context="com.udacity.sandwichclub.activities.MainActivity">
 
     <ListView
-        android:id="@+id/sandwiches_listview"
+        android:id="@+id/MainActivity_sandwichesListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
