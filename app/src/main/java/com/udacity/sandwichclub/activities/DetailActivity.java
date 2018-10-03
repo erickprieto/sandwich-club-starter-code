@@ -163,6 +163,7 @@ public class DetailActivity extends AppCompatActivity {
 
         Picasso.with(this)
                 .load(sandwich.getImage())
+                .error(android.support.graphics.drawable.R.drawable.notification_bg)
                 .into(this.getPictureSandwichImageView());
     }
 }
